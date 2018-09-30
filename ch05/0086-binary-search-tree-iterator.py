@@ -41,7 +41,7 @@ class BSTIterator:
     @param: root: The root of binary tree.
     """
     def __init__(self, root):
-        # do intialization if necessary
+        # do initialization if necessary
         self.stack = []
         while root is not None:
             self.stack.append(root)
