@@ -33,4 +33,43 @@ class Solution:
 
         return max_sum
 
-# TODO dp和贪心方法
+"""
+方法二：动态规划DP
+"""
+class Solution:
+    """
+    @param nums: A list of integers
+    @return: A integer indicate the sum of max subarray
+    """
+    def maxSubArray(self, nums):
+        # write your code here
+        if len(nums) == 0:
+            return 0
+        dp = [0 for x in range(len(nums))]
+        dp[0] = nums[0]
+        for i in range(1, len(nums)):
+            dp[i] = max(0, dp[i - 1]) + nums[i]
+        max_value = - sys.maxsize - 1
+        for v in dp:
+            max_value = max(max_value, v)
+        return max_value
+
+"""
+方法三：贪心greedy
+"""
+class Solution:
+    """
+    @param nums: A list of integers
+    @return: A integer indicate the sum of max subarray
+    """
+    def maxSubArray(self, nums):
+        # write your code here
+        if len(nums) == 0:
+            return 0
+        sum = 0
+        slice = - sys.maxsize - 1
+        for n in nums:
+            sum += n
+            slice = max(slice, sum)
+            sum = max(0, sum)
+        return slice
