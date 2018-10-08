@@ -21,6 +21,71 @@ class Interval(object):
 """
 
 
+"""
+方法一：双指针分别从头遍历两个list，若last为None，则起始start小的直接进入结果list，
+若不为None，则当前区间与结果list中的最后一个区间进行合并
+"""
+
+"""
+Definition of Interval.
+class Interval(object):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+"""
+class Solution:
+    """
+    @param list1: one of the given list
+    @param list2: another list
+    @return: the new sorted list of interval
+    """
+
+    def mergeTwoInterval(self, list1, list2):
+        # write your code here
+        res = []
+        if not list1 or not list2:
+            return list1 or list2
+
+        i, j = 0, 0
+        last, curr = None, None
+
+        while i < len(list1) and j < len(list2):
+            if list1[i].start < list2[j].start:
+                curr = list1[i]
+                i += 1
+            else:
+                curr = list2[j]
+                j += 1
+            last = self.merge(res, curr, last)
+
+        while i < len(list1):
+            last = self.merge(res, list1[i], last)
+            i += 1
+        while j < len(list2):
+            last = self.merge(res, list2[j], last)
+            j += 1
+
+        if last:
+            res.append(last)
+
+        return res
+
+    def merge(self, res, curr, last):
+        if last is None:
+            return curr
+
+        if curr.start > last.end:
+            res.append(last)
+            return curr
+
+        last.end = max(curr.end, last.end)
+        return last
+
+
+
+"""
+方法二：思想同上
+"""
 class Solution:
     """
     @param list1: one of the given list
