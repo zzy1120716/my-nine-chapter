@@ -32,3 +32,118 @@ class Solution:
                 if i + j + 1 < n:
                     dp[i + j + 1] = 1
         return dp[-1] == 1
+
+
+"""
+方法一：回溯法
+"""
+class Solution:
+    """
+    @param A: A integer
+    @param A: A list of integers
+    @return: A boolean
+    """
+    def canJumpFromPosition(self, position, A):
+        if position == len(A) - 1:
+            return True
+
+        furthestJump = min(position + A[position], len(A) - 1)
+        # old
+        # for nextPosition in range(position + 1, furthestJump + 1):
+        # new
+        for nextPosition in range(furthestJump, position, -1):
+            if self.canJumpFromPosition(nextPosition, A):
+                return True
+
+        return False
+
+    """
+    @param A: A list of integers
+    @return: A boolean
+    """
+    def canJump(self, A):
+        # write your code here
+        return self.canJumpFromPosition(0, A)
+
+
+"""
+方法二：自顶向下动态规划
+"""
+from enum import Enum
+Index = Enum('Index', ('GOOD', 'BAD', 'UNKNOWN'))
+
+class Solution:
+
+    memo = []
+
+    """
+    @param A: A integer
+    @param A: A list of integers
+    @return: A boolean
+    """
+    def canJumpFromPosition(self, position, A):
+        if self.memo[position] != Index.UNKNOWN:
+            return True if self.memo[position] == Index.GOOD else False
+
+        furthestJump = min(position + A[position], len(A) - 1)
+        for nextPosition in range(position + 1, furthestJump + 1):
+            if self.canJumpFromPosition(nextPosition, A):
+                self.memo[position] = Index.GOOD
+                return True
+
+        self.memo[position] = Index.BAD
+        return False
+
+    """
+    @param A: A list of integers
+    @return: A boolean
+    """
+    def canJump(self, A):
+        # write your code here
+        self.memo = [Index.UNKNOWN] * len(A)
+        self.memo[len(self.memo) - 1] = Index.GOOD
+        return self.canJumpFromPosition(0, A)
+
+
+"""
+方法三：自底向上动态规划
+"""
+from enum import Enum
+Index = Enum('Index', ('GOOD', 'BAD', 'UNKNOWN'))
+
+class Solution:
+    """
+    @param A: A list of integers
+    @return: A boolean
+    """
+    def canJump(self, A):
+        # write your code here
+        memo = [Index.UNKNOWN] * len(A)
+        memo[len(memo) - 1] = Index.GOOD
+
+        for i in range(len(A) - 2, -1, -1):
+            furthestJump = min(i + A[i], len(A) - 1)
+            for j in range(i + 1, furthestJump + 1):
+                if memo[j] == Index.GOOD:
+                    memo[i] = Index.GOOD
+                    break
+
+        return memo[0] == Index.GOOD
+
+
+"""
+方法四：贪心法
+"""
+class Solution:
+    """
+    @param A: A list of integers
+    @return: A boolean
+    """
+    def canJump(self, A):
+        # write your code here
+        lastPos = len(A) - 1
+        for i in range(len(A) - 1, -1, -1):
+            if i + A[i] >= lastPos:
+                lastPos = i
+
+        return lastPos == 0
