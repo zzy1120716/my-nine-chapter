@@ -24,6 +24,10 @@
 排序需要在原数组中进行。
 """
 
+"""
+三指针
+Dijkstra 3-way partitioning
+"""
 class Solution:
     """
     @param nums: A list of integer which is 0, 1 or 2 
@@ -37,12 +41,15 @@ class Solution:
         left, right, i = 0, len(nums) - 1, 0
         
         while i <= right:
+            # 0
             if nums[i] == 0:
                 nums[i], nums[left] = nums[left], nums[i]
                 left += 1
                 i += 1
+            # 1
             elif nums[i] == 1:
                 i += 1
+            # 2
             else:
                 nums[i], nums[right] = nums[right], nums[i]
                 right -= 1

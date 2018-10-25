@@ -31,3 +31,34 @@ class Solution:
             res[i] = res[i - 1] - nums[i - 1] + nums[i + k - 1]
                 
         return res
+
+
+"""
+my solution
+"""
+class Solution:
+    """
+    @param nums: a list of integers.
+    @param k: length of window.
+    @return: the sum of the element inside the window at each moving.
+    """
+    def winSum(self, nums, k):
+        # write your code here
+        if not nums or not k:
+            return []
+
+        if k > len(nums):
+            return [sum(nums)]
+
+        res = []
+        currSum = 0
+        for i in range(k):
+            currSum += nums[i]
+
+        res.append(currSum)
+
+        for i in range(k, len(nums)):
+            currSum = currSum - nums[i - k] + nums[i]
+            res.append(currSum)
+
+        return res
