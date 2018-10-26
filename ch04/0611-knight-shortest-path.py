@@ -61,7 +61,7 @@ class Solution:
         m = len(grid[0])
         
         from queue import Queue
-        q = Queue(maxsize = n * m)
+        q = Queue(maxsize=n * m)
         q.put(source)
         
         steps = 0
