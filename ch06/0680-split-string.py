@@ -9,9 +9,8 @@
 返回[["1","2","3"],["12","3"],["1","23"]]
 """
 
-"""
-方法一：爬楼梯，Divide & Conquer
-"""
+
+# 方法一：爬楼梯，Divide & Conquer
 class Solution:
     """
     @param: : a string to be split
@@ -32,9 +31,8 @@ class Solution:
             result.append([s[:2]] + r2)
         return result
 
-"""
-方法二：DFS
-"""
+
+# 方法二：DFS
 class Solution:
     """
     @param: : a string to be split
