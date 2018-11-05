@@ -54,7 +54,7 @@ class Solution:
         self.dfs(nums, index + 1, subset, results)
 
 # 可以扩展到排列类搜索的递归方式
-class Solution:
+class Solution1:
     """
     @param nums: A set of numbers
     @return: A list of lists
@@ -78,7 +78,7 @@ class Solution:
             subset.pop()    # backtracking
 
 # 每次传递一个新的list，省略backtracking的步骤
-class Solution:
+class Solution2:
     """
     @param nums: A set of numbers
     @return: A list of lists
@@ -100,3 +100,8 @@ class Solution:
             newSet = subset[:]
             newSet.append(nums[i])
             self.dfs(nums, i + 1, newSet, results)
+
+
+if __name__ == '__main__':
+    ans = Solution().subsets([1, 2, 3])
+    print(ans)
