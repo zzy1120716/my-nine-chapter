@@ -7,16 +7,14 @@
 返回 [1000, 100, 10]
 """
 
-"""
-方法一：quick select
-"""
+
+# 方法一：quick select
 class Solution:
     """
     @param nums: an integer array
     @param k: An integer
     @return: the top k largest numbers in array
     """
-
     def topk(self, nums, k):
         # write your code here
         self.quickSelect(nums, 0, len(nums) - 1, k)
@@ -49,10 +47,8 @@ class Solution:
             self.quickSelect(nums, i, end, k - (i - start))
 
 
-"""
-方法二：quick select partition函数
-"""
-class Solution:
+# 方法二：quick select partition函数
+class Solution1:
     """
     @param nums: an integer array
     @param k: An integer
@@ -85,12 +81,11 @@ class Solution:
         return index
 
 
-"""
-方法三：trick
-"""
+# 方法三：trick
 import heapq
 
-class Solution:
+
+class Solution2:
     """
     @param nums: an integer array
     @param k: An integer

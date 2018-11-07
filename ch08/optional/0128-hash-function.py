@@ -38,6 +38,7 @@ class Solution:
         # ans %= HASH_SIZE
         return ans
 
+
 if __name__ == "__main__":
     s = Solution()
     print(s.hashCode("abcd", 1000))

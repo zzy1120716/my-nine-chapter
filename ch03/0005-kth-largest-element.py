@@ -14,6 +14,8 @@
 注意事项
 你可以交换数组中的元素的位置
 """
+
+
 class Solution:
     # @param k & A a integer and an array
     # @return ans a integer
@@ -49,3 +51,7 @@ class Solution:
             return self.quickSelect(A, i, end, k - (i - start))
             
         return A[j + 1]
+
+
+if __name__ == '__main__':
+    print(Solution().kthLargestElement(3, [9, 3, 2, 4, 8]))
