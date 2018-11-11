@@ -10,9 +10,8 @@
 There is at least one subarray that it's sum equals to zero.
 """
 
-"""
-前缀和
-"""
+
+# 前缀和
 class Solution:
     """
     @param nums: A list of integers
@@ -32,7 +31,7 @@ class Solution:
         return -1, -1
 
 
-class Solution:
+class Solution1:
     """
     @param nums: A list of integers
     @return: A list of integers includes the index of the first number and the index of the last number
@@ -51,3 +50,8 @@ class Solution:
                 break
             hash[sum] = i
         return result
+
+
+if __name__ == '__main__':
+    print(Solution().subarraySum([-3, 1, 2, -3, 4]))
+    print(Solution1().subarraySum([-3, 1, 2, -3, 4]))
