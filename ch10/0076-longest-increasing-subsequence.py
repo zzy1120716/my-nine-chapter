@@ -19,9 +19,8 @@ https://en.wikipedia.org/wiki/Longest_increasing_subsequence
 https://segmentfault.com/a/1190000003819886
 """
 
-"""
-方法一：动态规划 O(n ^ 2)
-"""
+
+# 方法一：动态规划 O(n ^ 2)
 class Solution:
     """
     @param nums: An integer array
@@ -45,10 +44,8 @@ class Solution:
         return max_len
 
 
-"""
-方法二：耐心排序法
-"""
-class Solution:
+# 方法二：耐心排序法
+class Solution1:
     """
     @param nums: An integer array
     @return: The length of LIS (longest increasing subsequence)

@@ -9,9 +9,8 @@
 返回 3
 """
 
-"""
-方法一：暴力法（超时）时间O(2 ^ n)，空间O(n)
-"""
+
+# 方法一：暴力法（超时）时间O(2 ^ n)，空间O(n)
 class Solution:
     """
     @param n: An integer
@@ -31,10 +30,8 @@ class Solution:
         return self.climb(i + 1, n) + self.climb(i + 2, n)
 
 
-"""
-方法二：带记忆的递归
-"""
-class Solution:
+# 方法二：带记忆的递归
+class Solution1:
     """
     @param n: An integer
     @return: An integer
@@ -57,10 +54,8 @@ class Solution:
         return memo[i]
 
 
-"""
-方法三：动态规划
-"""
-class Solution:
+# 方法三：动态规划
+class Solution2:
     """
     @param n: An integer
     @return: An integer
@@ -79,10 +74,8 @@ class Solution:
         return dp[n]
 
 
-"""
-方法四：斐波那契数
-"""
-class Solution:
+# 方法四：斐波那契数
+class Solution3:
     """
     @param n: An integer
     @return: An integer
@@ -99,10 +92,8 @@ class Solution:
         return second
 
 
-"""
-方法五：Binets Method
-"""
-class Solution:
+# 方法五：Binets Method
+class Solution4:
     """
     @param n: An integer
     @return: An integer
@@ -132,10 +123,8 @@ class Solution:
         return c
 
 
-"""
-方法六：斐波那契公式
-"""
-class Solution:
+# 方法六：斐波那契公式
+class Solution5:
     """
     @param n: An integer
     @return: An integer

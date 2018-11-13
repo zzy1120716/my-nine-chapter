@@ -43,6 +43,7 @@ class Point:
         self.y = b
 """
 
+
 class Solution:
     deltaX = [1, 1, 2, 2, -1, -1, -2, -2]
     deltaY = [2, -2, 1, -1, 2, -2, 1, -1]
