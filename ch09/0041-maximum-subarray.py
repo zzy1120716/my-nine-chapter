@@ -11,16 +11,15 @@
 注意事项
 子数组最少包含一个数
 """
+import sys
 
-"""
-方法一：前缀和
-"""
+
+# 方法一：前缀和
 class Solution:
     """
     @param nums: A list of integers
     @return: A integer indicate the sum of max subarray
     """
-
     def maxSubArray(self, nums):
         # write your code here
         min_sum, max_sum = 0, -sys.maxsize
@@ -33,10 +32,9 @@ class Solution:
 
         return max_sum
 
-"""
-方法二：动态规划DP
-"""
-class Solution:
+
+# 方法二：动态规划DP
+class Solution1:
     """
     @param nums: A list of integers
     @return: A integer indicate the sum of max subarray
@@ -54,10 +52,9 @@ class Solution:
             max_value = max(max_value, v)
         return max_value
 
-"""
-方法三：贪心greedy
-"""
-class Solution:
+
+# 方法三：贪心greedy
+class Solution2:
     """
     @param nums: A list of integers
     @return: A integer indicate the sum of max subarray
@@ -73,3 +70,7 @@ class Solution:
             slice = max(slice, sum)
             sum = max(0, sum)
         return slice
+
+
+if __name__ == '__main__':
+    print(Solution().maxSubArray([-2, 2, -3, 4, -1, 2, 1, -5, 3]))

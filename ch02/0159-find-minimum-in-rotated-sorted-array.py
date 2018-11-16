@@ -13,6 +13,8 @@
 注意事项
 You may assume no duplicate exists in the array.
 """
+
+
 class Solution:
     """
     @param nums: a rotated sorted array
@@ -23,7 +25,7 @@ class Solution:
         if nums is None or len(nums) == 0:
             return -1
             
-        start, end, target = 0, len(nums) - 1, nums[len(nums) - 1]
+        start, end, target = 0, len(nums) - 1, nums[-1]
         
         while start + 1 < end:
             mid = (start + end) // 2
@@ -37,3 +39,7 @@ class Solution:
             return nums[start]
         else:
             return nums[end]
+
+
+if __name__ == '__main__':
+    print(Solution().findMin([4, 5, 6, 7, 0, 1, 2]))

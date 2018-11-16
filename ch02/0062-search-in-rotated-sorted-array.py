@@ -15,6 +15,8 @@
 挑战
 O(logN) time
 """
+
+
 class Solution:
     """
     @param A: an integer rotated sorted array
@@ -35,12 +37,12 @@ class Solution:
                 return mid
             
             if A[start] < A[mid]:
-                if A[start] <= target and target <= A[mid]:
+                if A[start] <= target <= A[mid]:
                     end = mid
                 else:
                     start = mid
             else:
-                if A[mid] <= target and target <= A[end]:
+                if A[mid] <= target <= A[end]:
                     start = mid
                 else:
                     end = mid
