@@ -25,7 +25,7 @@ class Solution:
     """
     def search(self, A, target):
         # write your code here
-        if A is None or len(A) == 0:
+        if not A:
             return -1
         
         start, end = 0, len(A) - 1
@@ -52,3 +52,8 @@ class Solution:
         if A[end] == target:
             return end
         return -1
+
+
+if __name__ == '__main__':
+    print(Solution().search([4, 5, 1, 2, 3], 1))
+    print(Solution().search([4, 5, 1, 2, 3], 0))
