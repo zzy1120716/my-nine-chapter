@@ -20,6 +20,7 @@ function for this problem.
 k <= n
 """
 
+
 # 彩虹排序 O(nlogk)
 class Solution:
     """
@@ -57,8 +58,9 @@ class Solution:
         self.rainbowSort(colors, start, right, colorFrom, colorMid)
         self.rainbowSort(colors, left, end, colorMid + 1, colorTo)
 
+
 # 三指针算法 O(nk)
-class Solution:
+class Solution1:
     """
     @param colors: A list of integer
     @param k: An integer
@@ -82,7 +84,7 @@ class Solution:
                     colors[left], colors[cur] = colors[cur], colors[left]
                     cur += 1
                     left += 1
-                elif colors[cur] > minColor and colors[cur] < maxColor:
+                elif maxColor > colors[cur] > minColor:
                     cur += 1
                 else:
                     colors[right], colors[cur] = colors[cur], colors[right]
@@ -90,8 +92,9 @@ class Solution:
             
             count += 2
 
+
 # 计数排序
-class Solution:
+class Solution2:
     """
     @param colors: A list of integer
     @param k: An integer
@@ -109,3 +112,9 @@ class Solution:
             for j in range(colorNums[i]):
                 colors[index] = i
                 index += 1
+
+
+if __name__ == '__main__':
+    colors = [3, 2, 2, 1, 4]
+    Solution1().sortColors2(colors, 4)
+    print(colors)
