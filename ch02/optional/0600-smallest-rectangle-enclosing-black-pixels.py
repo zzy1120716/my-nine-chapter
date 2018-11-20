@@ -15,10 +15,9 @@
 并且给出x = 0, y = 2, 则返回 6。
 """
 
-"""
-方法一：暴力法 O(m * n)
-遍历找到上下左右四个方向最靠边界的黑像素点
-"""
+
+# 方法一：暴力法 O(m * n)
+# 遍历找到上下左右四个方向最靠边界的黑像素点
 class Solution:
     """
     @param image: a binary matrix with '0' and '1'
@@ -42,10 +41,8 @@ class Solution:
         return (right - left + 1) * (bottom - top + 1)
 
 
-"""
-方法二：二分查找 O(max(m,n)logmax(m,n))
-"""
-class Solution:
+# 方法二：二分查找 O(max(m,n)logmax(m,n))
+class Solution1:
     """
     @param image: a binary matrix with '0' and '1'
     @param x: the location of one of the black pixels
@@ -122,10 +119,7 @@ class Solution:
         return True
 
 
-"""
-方法三：BFS
-会超时
-"""
+# 方法三：BFS，会超时
 from queue import Queue
 
 moves = [(0, -1), (-1, 0), (0, 1), (1, 0)]
@@ -137,7 +131,7 @@ class Pair:
         self.y = y
 
 
-class Solution:
+class Solution2:
     """
     @param image: a binary matrix with '0' and '1'
     @param x: the location of one of the black pixels

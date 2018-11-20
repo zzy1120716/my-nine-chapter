@@ -48,7 +48,6 @@ class Solution:
     @param grid: a 2D grid
     @return: An integer
     """
-
     def shortestDistance(self, grid):
         # write your code here
         if not grid:

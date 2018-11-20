@@ -13,9 +13,8 @@
 返回 2
 """
 
-"""
-方法一：问题与墙的坐标其实无关，只要遇到1边上的0，立即变成1就行了
-"""
+
+# 方法一：问题与墙的坐标其实无关，只要遇到1边上的0，立即变成1就行了
 class Solution:
 
     """
@@ -43,7 +42,7 @@ class Solution:
                     nx = x + dx
                     ny = y + dy
                     # position can be infected
-                    if nx >= 0 and nx < row and ny >= 0 and ny < col and grid[nx][ny] == 0:
+                    if row > nx >= 0 and col > ny >= 0 and grid[nx][ny] == 0:
                         grid[nx][ny] = 1
                         new_q.append((nx, ny))
             # renew zombie queue with recent infected people
@@ -78,11 +77,9 @@ class Solution:
         return True
 
 
-"""
-方法二：记录墙和僵尸的数量，队列中每一项增加当前僵尸数量，
-省去存储天数的变量，以及简化判断是否都被感染的步骤
-"""
-class Solution:
+# 方法二：记录墙和僵尸的数量，队列中每一项增加当前僵尸数量，
+# 省去存储天数的变量，以及简化判断是否都被感染的步骤
+class Solution1:
     """
     @param grid: a 2D integer grid
     @return: an integer

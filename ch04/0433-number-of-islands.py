@@ -18,15 +18,16 @@
 中有 3 个岛.
 """
 
-'''
-方法一：BFS
-'''
+
+# 方法一：BFS
 from queue import Queue
+
 
 class Coordinate:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+
 
 class Solution:
     """
@@ -71,12 +72,11 @@ class Solution:
     def inBound(self, coor, grid):
         n = len(grid)
         m = len(grid[0])
-        return coor.x >= 0 and coor.x < n and coor.y >= 0 and coor.y < m
+        return n > coor.x >= 0 and m > coor.y >= 0
 
-'''
-方法二：DFS
-'''
-class Solution:
+
+# 方法二：DFS
+class Solution1:
     """
     @param grid: a boolean 2D matrix
     @return: an integer
@@ -111,3 +111,13 @@ class Solution:
             self.dfs(grid, i + 1, j)
             self.dfs(grid, i, j - 1)
             self.dfs(grid, i, j + 1)
+
+
+if __name__ == '__main__':
+    print(Solution().numIslands([
+        [1, 1, 0, 0, 0],
+        [0, 1, 0, 0, 1],
+        [0, 0, 0, 1, 1],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 1]
+    ]))

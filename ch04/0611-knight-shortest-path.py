@@ -35,13 +35,12 @@ source = [2, 0] destination = [2, 2] return -1
 骑士不能穿过障碍物.
 """
 
-"""
-Definition for a point.
+
+# Definition for a point.
 class Point:
     def __init__(self, a=0, b=0):
         self.x = a
         self.y = b
-"""
 
 
 class Solution:
@@ -97,4 +96,4 @@ class Solution:
             return False
         if point.y < 0 or point.y >= m:
             return False
-        return grid[point.x][point.y] == False
+        return grid[point.x][point.y] is False
