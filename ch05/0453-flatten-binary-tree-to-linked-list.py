@@ -30,9 +30,8 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
-"""
-方法一：分治法
-"""
+
+# 方法一：分治法
 class Solution:
     """
     @param root: a TreeNode, the root of the binary tree
@@ -41,8 +40,7 @@ class Solution:
     def flatten(self, root):
         # write your code here
         self.helper(root)
-        
-    
+
     # restructure and return last node in preorder
     def helper(self, root):
         if root is None:
@@ -66,10 +64,8 @@ class Solution:
         return root
 
 
-"""
-方法二
-"""
-class Solution:
+# 方法二
+class Solution1:
     last_node = None
     
     """

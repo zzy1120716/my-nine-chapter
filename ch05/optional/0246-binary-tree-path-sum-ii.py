@@ -28,6 +28,7 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
+
 # 官方答案
 class Solution:
 
@@ -61,8 +62,8 @@ class Solution:
         path.pop()
 
 
-"""#################################分割线####################################"""
-class Solution:
+# DFS2
+class Solution1:
 
     """
     @param: root: the root of binary tree
@@ -92,9 +93,8 @@ class Solution:
         path.pop()
 
 
-"""#################################分割线####################################"""
 # 先序遍历 + 回溯法，通用模板
-class Solution:
+class Solution2:
 
     """
     @param: root: the root of binary tree

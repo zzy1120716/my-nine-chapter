@@ -62,8 +62,7 @@ class Solution:
         return None
 
 
-"""#################################分割线####################################"""
-class Solution:
+class Solution1:
     """
     @param: root: The root of the tree
     @param: A: node in the tree
@@ -79,9 +78,8 @@ class Solution:
         return p1
 
 
-"""#################################分割线####################################"""
 # 官方答案，辅助函数找到A和B分别到root的path，随后从后向前比较两个list即可
-class Solution:
+class Solution2:
     
     """
     @param: root: The root of the tree

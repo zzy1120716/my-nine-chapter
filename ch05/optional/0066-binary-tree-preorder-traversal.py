@@ -24,6 +24,7 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
+
 # 递归
 class Solution:
 
@@ -47,15 +48,13 @@ class Solution:
         self.helper(root.right)
 
 
-"""
-非递归
-1. 有点类似BFS的写法，只不过是用stack而不是queue：
-2. 首先把root入栈
-3. 出栈的元素同时放进结果队列
-4. 先把右儿子节点入栈，再把左儿子节点入栈，这样出栈的顺序是先左后右（根节点已出）
-按照这个次序继续，直到stack为空
-"""
-class Solution:
+# 非递归
+# 1. 有点类似BFS的写法，只不过是用stack而不是queue：
+# 2. 首先把root入栈
+# 3. 出栈的元素同时放进结果队列
+# 4. 先把右儿子节点入栈，再把左儿子节点入栈，这样出栈的顺序是先左后右（根节点已出）
+# 按照这个次序继续，直到stack为空
+class Solution1:
     """
     @param root: A Tree
     @return: Preorder in ArrayList which contains node values.

@@ -24,6 +24,7 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
+
 # 递归
 class Solution:
 
@@ -48,11 +49,9 @@ class Solution:
 
 
 # 非递归
-"""
-利用两个栈
-https://www.youtube.com/watch?v=qT65HltK2uE
-"""
-class Solution:
+# 利用两个栈
+# https://www.youtube.com/watch?v=qT65HltK2uE
+class Solution1:
     """
     @param root: A Tree
     @return: Postorder in ArrayList which contains node values.
@@ -80,15 +79,13 @@ class Solution:
         return result
 
 
-"""
-在实现遍历的循环中维持一种不变的关系：
-1. 栈中结点序列的左边是二叉树已遍历过的部分，右边是尚未遍历的部分
-2. 如果curNode不空，其父结点就是栈顶结点
-3. curNode空时，栈顶就是应访问的结点
-根据被访问结点是其父结点的左子结点或右子结点，就可以决定下一步怎么做：如果是左子结点就
-转到右兄弟；如果是右子结点，就应该处理根结点并强制退栈。
-"""
-class Solution:
+# 在实现遍历的循环中维持一种不变的关系：
+# 1. 栈中结点序列的左边是二叉树已遍历过的部分，右边是尚未遍历的部分
+# 2. 如果curNode不空，其父结点就是栈顶结点
+# 3. curNode空时，栈顶就是应访问的结点
+# 根据被访问结点是其父结点的左子结点或右子结点，就可以决定下一步怎么做：如果是左子结点就
+# 转到右兄弟；如果是右子结点，就应该处理根结点并强制退栈。
+class Solution2:
     """
     @param root: A Tree
     @return: Postorder in ArrayList which contains node values.

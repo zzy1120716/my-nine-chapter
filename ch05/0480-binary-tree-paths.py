@@ -18,9 +18,8 @@
 ]
 """
 
-"""
-方法一：基于Traverse的DFS
-"""
+
+# 方法一：基于Traverse的DFS
 class Solution:
     """
     @param root: the root of the binary tree
@@ -34,7 +33,6 @@ class Solution:
         res = []
         self.helper(root, [], res)
         return res
-        
 
     def helper(self, node, path, res):
         path.append(str(node.val))
@@ -53,10 +51,8 @@ class Solution:
         path.pop()
 
 
-"""
-方法二：基于Divide & Conquer的DFS
-"""
-class Solution:
+# 方法二：基于Divide & Conquer的DFS
+class Solution1:
     """
     @param root: the root of the binary tree
     @return: all root-to-leaf paths
@@ -79,10 +75,8 @@ class Solution:
         return paths
 
 
-"""
-方法三：另一种Traversal
-"""
-class Solution:
+# 方法三：另一种Traversal
+class Solution2:
     """
     @param root: the root of the binary tree
     @return: all root-to-leaf paths
@@ -95,8 +89,7 @@ class Solution:
         res = []
         self.dfs(root, [str(root.val)], res)
         return res
-    
-    
+
     def dfs(self, node, path, res):
         if node.left is None and node.right is None:
             res.append('->'.join(path))

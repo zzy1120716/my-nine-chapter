@@ -23,6 +23,7 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
+
 # DFS模板
 class Solution:
     """
@@ -44,7 +45,7 @@ class Solution:
 
 
 # 官方答案
-class Solution:
+class Solution1:
     """
     @param root: The root of binary tree.
     @return: An integer

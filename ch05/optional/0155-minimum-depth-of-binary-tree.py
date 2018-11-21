@@ -27,6 +27,7 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
+
 # 官方答案
 class Solution:
     """
@@ -56,7 +57,7 @@ class Solution:
 
 
 # BFS：返回遇到的第一个叶子结点的层数即可
-class Solution:
+class Solution1:
 
     """
     @param root: The root of binary tree

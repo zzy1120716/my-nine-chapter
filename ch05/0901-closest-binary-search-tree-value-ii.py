@@ -25,9 +25,8 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
-"""
-方法一：暴力法，中序遍历二叉树，在数组中找最接近target的k个数。
-"""
+
+# 方法一：暴力法，中序遍历二叉树，在数组中找最接近target的k个数。
 class Solution:
     """
     @param root: the given BST
@@ -59,8 +58,7 @@ class Solution:
                 right += 1
         
         return result
-        
-    
+
     def traverse(self, root, values):
         if root is None:
             return
@@ -69,11 +67,8 @@ class Solution:
         self.traverse(root.right,values)
 
 
-
-"""
-方法二：左右扩展（最优），把树当做数组，move_upper当做i+=1，move_lower当做i-=1
-"""
-class Solution:
+# 方法二：左右扩展（最优），把树当做数组，move_upper当做i+=1，move_lower当做i-=1
+class Solution1:
     """
     @param root: the given BST
     @param target: the given target
@@ -105,7 +100,6 @@ class Solution:
         
         return values
     
-    
     def get_stack(self, root, target):
         stack = []
         while root is not None:
@@ -115,7 +109,6 @@ class Solution:
             else:
                 root = root.right
         return stack
-    
     
     # get the prev node
     def move_lower(self, low_s):
@@ -130,8 +123,7 @@ class Solution:
             low_s.append(n)
             n = n.right
     
-    
-    #get the next node
+    # get the next node
     def move_upper(self, up_s):
         n = up_s[-1]
         if not n.right:

@@ -20,9 +20,8 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
-"""
-方法一：递归
-"""
+
+# 方法一：递归
 class Solution:
     """
     @param root: the given BST
@@ -43,12 +42,11 @@ class Solution:
         if upperNode is None:
             return lowerNode.val
             
-        if (target - lowerNode.val > upperNode.val - target):
+        if target - lowerNode.val > upperNode.val - target:
             return upperNode.val
         
         return lowerNode.val
-    
-    
+
     def lowerBound(self, root, target):
         if root is None:
             return None
@@ -62,7 +60,6 @@ class Solution:
             return lowerNode
         
         return root
-        
         
     def upperBound(self, root, target):
         if root is None:
@@ -79,10 +76,8 @@ class Solution:
         return root
 
 
-"""
-方法二：非递归
-"""
-class Solution:
+# 方法二：非递归
+class Solution1:
     """
     @param root: the given BST
     @param target: the given target
@@ -102,11 +97,10 @@ class Solution:
         if upperNode is None:
             return lowerNode.val
             
-        if (target - lowerNode.val > upperNode.val - target):
+        if target - lowerNode.val > upperNode.val - target:
             return upperNode.val
         
         return lowerNode.val
-    
     
     def lowerBound(self, root, target):
         curr = root
@@ -118,7 +112,6 @@ class Solution:
             else:
                 curr = curr.left
         return last
-        
         
     def upperBound(self, root, target):
         curr = root

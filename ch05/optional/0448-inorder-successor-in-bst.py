@@ -34,6 +34,7 @@ class TreeNode(object):
         self.right = None
 """
 
+
 # 递归
 class Solution:
     """
@@ -54,7 +55,7 @@ class Solution:
 
 
 # 非递归
-class Solution:
+class Solution1:
     """
     @param: root: The root of the BST.
     @param: p: You need find the successor node of p.
@@ -84,7 +85,7 @@ class Solution:
 
 
 # 非递归简化版
-class Solution:
+class Solution2:
     """
     @param: root: The root of the BST.
     @param: p: You need find the successor node of p.

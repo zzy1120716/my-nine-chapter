@@ -33,9 +33,8 @@ while iterator.hasNext():
     do something for node 
 """
 
-"""
-方法一：通用解法
-"""
+
+# 方法一：通用解法
 class BSTIterator:
     """
     @param: root: The root of binary tree.
@@ -74,11 +73,8 @@ class BSTIterator:
         return node
 
 
-
-"""
-方法二：最简解法
-"""
-class BSTIterator:
+# 方法二：最简解法
+class BSTIterator1:
     """
     @param: root: The root of binary tree.
     """
@@ -107,4 +103,3 @@ class BSTIterator:
         nxt = self.curt
         self.curt = self.curt.right
         return nxt
-        

@@ -27,9 +27,8 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
-"""
-方法一：分治法
-"""
+
+# 方法一：分治法
 class Solution:
     """
     @param root: The root of binary tree.
@@ -54,11 +53,11 @@ class Solution:
         self.validate(root.right)
 
 
-"""
-方法二：非递归
-"""
+# 方法二：非递归
 import sys
-class Solution:
+
+
+class Solution1:
     """
     @param root: The root of binary tree.
     @return: True if the binary tree is BST, or false

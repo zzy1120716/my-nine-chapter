@@ -30,6 +30,7 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
+
 # 官方答案
 class Solution:
     """
@@ -71,7 +72,7 @@ class Solution:
 
 
 # 先求从根节点到A，B各自的路径的方法
-class Solution:
+class Solution1:
     """
     @param: root: The root of the binary search tree.
     @param: A: A TreeNode in a Binary.

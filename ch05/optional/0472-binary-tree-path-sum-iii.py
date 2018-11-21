@@ -73,7 +73,7 @@ class Solution:
 
 
 # 遍历每个节点，以每个节点为起始，做DFS，找出所有符合的组合
-class Solution:
+class Solution1:
     """
     @param: root: the root of binary tree
     @param: target: An integer

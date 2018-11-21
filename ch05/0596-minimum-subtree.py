@@ -24,10 +24,10 @@ class TreeNode:
         self.val = val
         self.left, self.right = None, None
 """
+import sys
 
-"""
-方法一：纯Divide & Conquer
-"""
+
+# 方法一：纯Divide & Conquer
 class Solution:
     """
     @param root: the root of binary tree
@@ -54,10 +54,9 @@ class Solution:
         
         return sum, root, sum
 
-"""
-方法二：Divide Conquer + Traverse
-"""
-class Solution:
+
+# 方法二：Divide Conquer + Traverse
+class Solution1:
     """
     @param root: the root of binary tree
     @return: the root of the minimum subtree

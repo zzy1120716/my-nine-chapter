@@ -19,11 +19,10 @@ class TreeNode:
         self.left, self.right = None, None
 """
 
-"""
-方法一：
-利用BST的性质：往左走的时候不记,往右走的时候记
-即保存即将向右拐的节点，当找到目标节点时，保存的节点就是中序遍历的前序节点
-"""
+
+# 方法一：
+# 利用BST的性质：往左走的时候不记,往右走的时候记
+# 即保存即将向右拐的节点，当找到目标节点时，保存的节点就是中序遍历的前序节点
 class Solution:
     """
     @param root: the given BST
@@ -44,13 +43,11 @@ class Solution:
         return predecessor
 
 
-"""
-方法二：DFS
-设计一个全局变量turn_right ，代表上一个有右拐的点，开始为None
-然后如果是左拐，对这个变量不作处理，右拐的话，刷新这个全局变量为当前root
-找到p,如果p有左子树，那么返回左子树，没有的话，就返回它前面上一个右拐的点
-"""
-class Solution:
+# 方法二：DFS
+# 设计一个全局变量turn_right ，代表上一个有右拐的点，开始为None
+# 然后如果是左拐，对这个变量不作处理，右拐的话，刷新这个全局变量为当前root
+# 找到p,如果p有左子树，那么返回左子树，没有的话，就返回它前面上一个右拐的点
+class Solution1:
 
     turn_right = None
 

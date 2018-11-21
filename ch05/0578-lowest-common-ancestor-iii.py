@@ -32,9 +32,8 @@ class TreeNode:
         this.left, this.right = None, None
 """
 
-"""
-方法一：分治法
-"""
+
+# 方法一：分治法
 class Solution:
     """
     @param: root: The root of the binary tree.
@@ -73,10 +72,9 @@ class Solution:
 
         return a, b, None
 
-"""
-方法二：DFS，寻找到A和B的路径
-"""
-class Solution:
+
+# 方法二：DFS，寻找到A和B的路径
+class Solution1:
     route_a, route_b, temp = [], [], []
 
     """
