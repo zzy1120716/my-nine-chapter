@@ -11,10 +11,9 @@
 ccdaabcdbb -> ccdacdbb -> cabb -> cb (长度为 2)
 """
 
-"""
-方法一：BFS
-使用一个集合记录访问过的字符串
-"""
+
+# 方法一：BFS
+# 使用一个集合记录访问过的字符串
 class Solution:
     """
     @param: s: a string
@@ -26,7 +25,7 @@ class Solution:
         from queue import Queue
         queue = Queue()
         queue.put(s)
-        visited = set([s])
+        visited = {s}
         min_len = len(s)
 
         # 注意Queue的判空操作，与一般不同
@@ -44,8 +43,9 @@ class Solution:
 
         return min_len
 
+
 # 使用deque版本，熟悉队列相关操作
-class Solution:
+class Solution1:
     """
     @param: s: a string
     @param: dict: a set of n substrings
@@ -55,7 +55,7 @@ class Solution:
         # write your code here
         from collections import deque
         queue = deque([s])
-        visited = set([s])
+        visited = {s}
         min_len = len(s)
 
         while queue:
@@ -73,7 +73,9 @@ class Solution:
         return min_len
 
 
-"""
-方法二：DFS
-"""
+# 方法二：DFS
 # TODO
+
+
+if __name__ == '__main__':
+    print(Solution().minLength("ccdaabcdbb", ["ab", "cd"]))

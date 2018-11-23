@@ -8,6 +8,8 @@
 给一字串lintcode,字典为["de", "ding", "co", "code", "lint"]
 则结果为["lint code", "lint co de"]。
 """
+
+
 class Solution:
     """
     @param: s: A string

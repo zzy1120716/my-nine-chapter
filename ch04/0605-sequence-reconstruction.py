@@ -25,6 +25,8 @@
 给定org = [4,1,5,2,6,3], seqs = [[5,2,6,3],[4,1,5,2]]
 返回 true
 """
+
+
 class Solution:
     """
     @param org: a permutation of the integers from 1 to n
