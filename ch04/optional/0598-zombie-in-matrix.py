@@ -16,7 +16,6 @@
 
 # 方法一：问题与墙的坐标其实无关，只要遇到1边上的0，立即变成1就行了
 class Solution:
-
     """
     @param grid: a 2D integer grid
     @return: an integer
@@ -121,3 +120,11 @@ class Solution1:
             return -1
         else:
             return step
+
+
+if __name__ == '__main__':
+    print(Solution().zombie([
+        [0, 1, 2, 0, 0],
+        [1, 0, 0, 2, 1],
+        [0, 1, 0, 0, 0]
+    ]))
