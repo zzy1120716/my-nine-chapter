@@ -11,9 +11,8 @@
 近最少使用的数据用来腾出空闲位置。
 """
 
-"""
-方法一：令狐冲Java版本翻译过来的
-"""
+
+# 方法一：令狐冲Java版本翻译过来的
 class LinkedNode:
     def __init__(self, key, val):
         self.key = key
@@ -25,7 +24,6 @@ class LRUCache:
     """
     @param: capacity: An integer
     """
-
     def __init__(self, capacity):
         # do initialization if necessary
         self.capacity = capacity
@@ -38,7 +36,6 @@ class LRUCache:
     @param: key: An integer
     @return: nothing
     """
-
     def move_to_tail(self, key):
         prev = self.key_to_prev[key]
         curt = prev.next
@@ -59,7 +56,6 @@ class LRUCache:
     @param: key: An integer
     @return: An integer
     """
-
     def get(self, key):
         # write your code here
         if key not in self.key_to_prev:
@@ -74,7 +70,6 @@ class LRUCache:
     @param: value: An integer
     @return: nothing
     """
-
     def set(self, key, value):
         # write your code here
         if self.get(key) != -1:
@@ -100,21 +95,11 @@ class LRUCache:
         self.move_to_tail(key)
 
 
-"""
-方法二：九章python
-"""
-class LinkedNode:
-    def __init__(self, key=None, value=None, next=None):
-        self.key = key
-        self.value = value
-        self.next = next
-
-
-class LRUCache:
+# 方法二：九章python
+class LRUCache1:
     """
     @param: capacity: An integer
     """
-
     def __init__(self, capacity):
         # do intialization if necessary
         self.hash = {}
@@ -148,7 +133,6 @@ class LRUCache:
     @param: key: An integer
     @return: An integer
     """
-
     def get(self, key):
         # write your code here
         if key not in self.hash:
@@ -161,7 +145,6 @@ class LRUCache:
     @param: value: An integer
     @return: nothing
     """
-
     def set(self, key, value):
         # write your code here
         if key in self.hash:
@@ -172,12 +155,12 @@ class LRUCache:
             if len(self.hash) > self.capacity:
                 self.pop_front()
 
-"""
-方法三：使用高级数据结构，OrderedDict
-"""
+
+# 方法三：使用高级数据结构，OrderedDict
 from collections import OrderedDict
 
-class LRUCache:
+
+class LRUCache2:
     """
     @param: capacity: An integer
     """
@@ -212,3 +195,13 @@ class LRUCache:
             # last为True时pop规则为FILO，last为False时pop规则为FIFO
             self.cache.popitem(last=False)
         self.cache[key] = value
+
+
+if __name__ == '__main__':
+    lru = LRUCache(2)
+    lru.set(2, 1)
+    lru.set(1, 1)
+    print(lru.get(2))
+    lru.set(4, 1)
+    print(lru.get(1))
+    print(lru.get(2))
