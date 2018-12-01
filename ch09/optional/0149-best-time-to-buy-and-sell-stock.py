@@ -14,7 +14,6 @@ class Solution:
     @param prices: Given an integer array
     @return: Maximum profit
     """
-
     def maxProfit(self, prices):
         # write your code here
         min_price = float('inf')
