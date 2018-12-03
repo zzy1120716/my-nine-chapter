@@ -14,10 +14,9 @@
 我们可以认为1也是一个丑数
 """
 
-"""
-方法一：使用heap，初始化min heap里面的值为1
-做n次循环，每个从min heap pop出来的数乘以2，3，5
-"""
+
+# 方法一：使用heap，初始化min heap里面的值为1
+# 做n次循环，每个从min heap pop出来的数乘以2，3，5
 from heapq import heappush, heappop
 
 
@@ -26,11 +25,10 @@ class Solution:
     @param n: An integer
     @return: the nth prime number as description.
     """
-
     def nthUglyNumber(self, n):
         # write your code here
         heap = [1]
-        visited = set([1])
+        visited = {1}
 
         val = None
         for i in range(n):
@@ -42,15 +40,13 @@ class Solution:
 
         return val
 
-"""
-方法二：维护3个position，计算分别乘以2,3,5后的最小值，加到list中
-"""
-class Solution:
+
+# 方法二：维护3个position，计算分别乘以2,3,5后的最小值，加到list中
+class Solution1:
     """
     @param n: An integer
     @return: the nth prime number as description.
     """
-
     def nthUglyNumber(self, n):
         # write your code here
         nums = [1]
