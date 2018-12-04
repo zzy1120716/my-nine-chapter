@@ -12,34 +12,22 @@
 不同列表中的间隔可能会重叠。
 """
 
-"""
-Definition of Interval.
+
+# Definition of Interval.
 class Interval(object):
     def __init__(self, start, end):
         self.start = start
         self.end = end
-"""
 
 
-"""
-方法一：双指针分别从头遍历两个list，若last为None，则起始start小的直接进入结果list，
-若不为None，则当前区间与结果list中的最后一个区间进行合并
-"""
-
-"""
-Definition of Interval.
-class Interval(object):
-    def __init__(self, start, end):
-        self.start = start
-        self.end = end
-"""
+# 方法一：双指针分别从头遍历两个list，若last为None，则起始start小的直接进入结果list，
+# 若不为None，则当前区间与结果list中的最后一个区间进行合并
 class Solution:
     """
     @param list1: one of the given list
     @param list2: another list
     @return: the new sorted list of interval
     """
-
     def mergeTwoInterval(self, list1, list2):
         # write your code here
         res = []
@@ -82,17 +70,13 @@ class Solution:
         return last
 
 
-
-"""
-方法二：思想同上
-"""
-class Solution:
+# 方法二：思想同上
+class Solution1:
     """
     @param list1: one of the given list
     @param list2: another list
     @return: the new sorted list of interval
     """
-
     def mergeTwoInterval(self, list1, list2):
         # write your code here
         i, j = 0, 0
