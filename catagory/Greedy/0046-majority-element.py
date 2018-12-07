@@ -13,6 +13,29 @@
 You may assume that the array is non-empty and the majority 
 number always exist in the array.
 """
+
+
+# Misra-Gries Family of Algorithms - MAJORITY problem
+# https://zhenye-na.github.io/2018/05/13/misra-gries-algorithms.html#majority-problem
+
+"""
+O(n) time and O(1) extra space
+
+Let us look at the MAJORITY problem first. We have two variables that we store. 
+The first-variable is the key (which is either a member of 1,2,…,m or a null-entity). 
+The second-variable is an integer (which is a count). We start with an empty key, and a count of zero.
+
+Every time an element a_i = j of the data-stream is observed,
+
+If the key is empty we set the value of the key to j, and we initialize the count to 1.
+If the key is not empty, and equal to j, we increment the count by 1.
+If the key is not empty, and not equal to j, we decrement the count by 1
+If the count becomes zero as a result of this decrementing, we set the key to null-entity.
+
+It is not hard to see that if there is a majority-element, it will be the value of the key.
+"""
+
+
 class Solution:
     """
     @param: nums: a list of integers
