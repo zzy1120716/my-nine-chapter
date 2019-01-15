@@ -24,13 +24,14 @@
 挑战2：用DFS算法来做
 """
 
-"""
-Definition of TreeNode:
+
+# Definition of TreeNode:
 class TreeNode:
     def __init__(self, val):
         self.val = val
         self.left, self.right = None, None
-"""
+
+
 class Solution:
     """
     @param root: A Tree
@@ -63,16 +64,7 @@ class Solution:
 
 # 官方
 # from lintcode import TreeNode
-"""
-Definition of TreeNode:
-class TreeNode:
-    def __init__(self, val):
-        this.val = val
-        this.left, this.right = None, None
-"""
-
-
-class Solution:
+class Solution1:
     """
     @param root: The root of binary tree.
     @return: Level order in a list of lists of integers

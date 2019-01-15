@@ -22,3 +22,7 @@ class Solution:
         for x in A:
             ans = ans ^ x
         return ans
+
+
+if __name__ == '__main__':
+    print(Solution().singleNumber([1, 2, 2, 1, 3, 4, 3]))
