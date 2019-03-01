@@ -7,6 +7,7 @@
 给出 [3, 2, 1, 4, 5], 排序后的结果为 [1, 2, 3, 4, 5]。
 """
 
+
 # 快排
 class Solution:
     """
@@ -40,8 +41,9 @@ class Solution:
         self.quickSort(A, start, right)
         self.quickSort(A, left, end)
 
+
 # 归并
-class Solution:
+class Solution2:
     """
     @param A: an integer array
     @return: nothing
