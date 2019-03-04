@@ -12,9 +12,8 @@
 时间复杂度为O(log n)
 """
 
-"""
-方法一：sort O(nlogn)
-"""
+
+# 方法一：sort O(nlogn)
 class Solution:
     """
     @param: A: An integer array
@@ -28,16 +27,13 @@ class Solution:
         return C[n // 2] if n % 2 != 0 else (C[n // 2] + C[n // 2 - 1]) / 2
 
 
-"""
-方法二：merge只计数，不开辟新空间 O(n)
-"""
-class Solution:
+# 方法二：merge只计数，不开辟新空间 O(n)
+class Solution1:
     """
     @param: A: An integer array
     @param: B: An integer array
     @return: a double whose format is *.5 or *.0
     """
-
     def findMedianSortedArrays(self, A, B):
         # write your code here
         n = len(A) + len(B)
@@ -67,16 +63,13 @@ class Solution:
             return m1
 
 
-"""
-方法三：二分答案 O(logn)
-"""
-class Solution:
+# 方法三：二分答案 O(logn)
+class Solution2:
     """
     @param: A: An integer array
     @param: B: An integer array
     @return: a double whose format is *.5 or *.0
     """
-
     def findMedianSortedArrays(self, A, B):
         # write your code here
         m, n = len(A), len(B)
