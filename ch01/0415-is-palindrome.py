@@ -17,6 +17,8 @@ O(n) 时间复杂度，且不占用额外空间。
 
 在这个题目中，我们将空字符串判定为有效回文。
 """
+
+
 class Solution:
     """
     @param s: A string
@@ -35,6 +37,7 @@ class Solution:
             i += 1
             j -= 1
         return True
+
 
 if __name__ == "__main__":
     s = Solution()

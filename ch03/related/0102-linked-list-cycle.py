@@ -27,14 +27,15 @@ class Solution:
     """
     def hasCycle(self, head):
         # write your code here
-        if head is not None:
-            slow, fast = head, head.next
-            while fast is not None and fast.next is not None:
-                fast = fast.next.next
-                slow = slow.next
-                if slow is None or fast is None:
-                    return False
-                if slow == fast:
-                    return True
+        if not head:
+            return False
+        slow, fast = head, head.next
+        while fast is not None and fast.next is not None:
+            fast = fast.next.next
+            slow = slow.next
+            if slow is None or fast is None:
+                return False
+            if slow == fast:
+                return True
         
         return False

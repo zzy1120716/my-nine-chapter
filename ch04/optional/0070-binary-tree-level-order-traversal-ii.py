@@ -18,16 +18,33 @@
   [3]
 ]
 """
+# 方法一：层次遍历直接reverse（同#69，略）
 
-"""
-方法一：层次遍历直接reverse（同#69，略）
-"""
 
-"""
-方法二：思路是 dfs，在遍历时往 ans 塞入空数组，同时保存这个节点的索引和深度
-最后遍历一次 preorder，按照对应坑位塞节点
-"""
+# 方法二：DFS
 class Solution:
+    """
+    @param root: A tree
+    @return: buttom-up level order a list of lists of integer
+    """
+    def levelOrderBottom(self, root):
+        res = []
+        self.dfs(root, 0, res)
+        return res
+
+    def dfs(self, root, level, res):
+        if not root:
+            return
+        if len(res) < level + 1:
+            res.insert(0, [])
+        res[-(level + 1)].append(root.val)
+        self.dfs(root.left, level + 1, res)
+        self.dfs(root.right, level + 1, res)
+
+
+# 方法三：思路是 dfs，在遍历时往 ans 塞入空数组，同时保存这个节点的索引和深度
+# 最后遍历一次 preorder，按照对应坑位塞节点
+class Solution1:
     """
     @param root: A tree
     @return: buttom-up level order a list of lists of integer

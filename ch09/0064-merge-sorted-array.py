@@ -11,9 +11,8 @@
 你可以假设A具有足够的空间（A数组的大小大于或等于m+n）去添加B中的元素。
 """
 
-"""
-方法一：B中所有数加到A末尾，再排序O(nlogn))
-"""
+
+# 方法一：B中所有数加到A末尾，再排序O(nlogn))
 class Solution:
     """
     @param: A: sorted integer array A which has m elements, but size of A is m+n
@@ -28,10 +27,9 @@ class Solution:
             A[i + m] = B[i]
         A.sort()
 
-"""
-方法二：双指针，从末尾开始遍历，取较大值加到A的末尾，O(n)
-"""
-class Solution:
+
+# 方法二：双指针，从末尾开始遍历，取较大值加到A的末尾，O(n)
+class Solution1:
     """
     @param: A: sorted integer array A which has m elements, but size of A is m+n
     @param: m: An integer

@@ -42,6 +42,20 @@ class Solution:
         return start
 
 
+class Solution0:
+    def sqrt(self, x: int) -> int:
+        low, high =  1, x
+        ans = 0
+        while low <= high:
+            mid = (low + high) // 2
+            if mid ** 2 <= x:
+                low = mid + 1
+                ans = mid
+            else:
+                high = mid - 1
+        return ans
+
+
 class Solution1:
     """
     @param x: An integer
@@ -67,7 +81,7 @@ class Solution2:
 
 
 if __name__ == '__main__':
-    print(Solution().sqrt(3))
-    print(Solution().sqrt(4))
-    print(Solution().sqrt(5))
-    print(Solution().sqrt(10))
+    print(Solution0().sqrt(3))
+    print(Solution0().sqrt(4))
+    print(Solution0().sqrt(5))
+    print(Solution0().sqrt(10))
