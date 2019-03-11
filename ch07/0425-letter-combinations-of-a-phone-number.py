@@ -29,6 +29,8 @@ KEYBOARD = {
     '9': ['w', 'x', 'y', 'z']
 }
 
+
+# 方法一：DFS
 class Solution:
     """
     @param digits: A digital string
@@ -50,4 +52,30 @@ class Solution:
         
         for letter in KEYBOARD[digits[index]]:
             self.dfs(digits, index + 1, string + letter, results)
-        
+
+
+# 方法二：BFS
+class Solution1(object):
+
+    def __init__(self):
+        self.d2l = {'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
+
+    def letterCombinations(self, digits):
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
+        if len(digits) == 0:
+            return []
+        results = [""]
+        for digit in digits:
+            tmp = []
+            for s in results:
+                for c in self.d2l[digit]:
+                    tmp.append(s + c)
+            results = tmp
+        return results
+
+
+if __name__ == '__main__':
+    print(Solution1().letterCombinations('23'))
