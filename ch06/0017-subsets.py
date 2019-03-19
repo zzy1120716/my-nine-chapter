@@ -21,6 +21,8 @@
 注意事项
 子集中的元素排列必须是非降序的，解集必须不包含重复的子集
 """
+
+
 # 最简单的0/1递归方式
 class Solution:
     """
@@ -53,6 +55,7 @@ class Solution:
         subset.pop()
         self.dfs(nums, index + 1, subset, results)
 
+
 # 可以扩展到排列类搜索的递归方式
 class Solution1:
     """
@@ -76,6 +79,7 @@ class Solution1:
             self.dfs(nums, i + 1, subset, results)
             # [1,2] => [1]
             subset.pop()    # backtracking
+
 
 # 每次传递一个新的list，省略backtracking的步骤
 class Solution2:
