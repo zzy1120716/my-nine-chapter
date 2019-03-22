@@ -19,6 +19,8 @@
 注意事项
 你可以假设没有重复数字。
 """
+
+
 class Solution:
     """
     @param: nums: A list of integers.
