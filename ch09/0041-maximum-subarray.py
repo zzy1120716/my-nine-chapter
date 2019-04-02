@@ -39,18 +39,18 @@ class Solution1:
     @param nums: A list of integers
     @return: A integer indicate the sum of max subarray
     """
-    def maxSubArray(self, nums):
-        # write your code here
-        if len(nums) == 0:
-            return 0
-        dp = [0 for x in range(len(nums))]
+    def maxSubArray(self, nums) -> int:
+        n = len(nums)
+        dp = [0] * n
         dp[0] = nums[0]
-        for i in range(1, len(nums)):
-            dp[i] = max(0, dp[i - 1]) + nums[i]
-        max_value = - sys.maxsize - 1
-        for v in dp:
-            max_value = max(max_value, v)
-        return max_value
+        max_sum = nums[0]
+        for i in range(1, n):
+            if dp[i - 1] < 0:
+                dp[i] = nums[i]
+            else:
+                dp[i] = dp[i - 1] + nums[i]
+            max_sum = max(max_sum, dp[i])
+        return max_sum
 
 
 # 方法三：贪心greedy
