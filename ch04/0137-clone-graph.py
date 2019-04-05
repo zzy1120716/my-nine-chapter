@@ -22,15 +22,16 @@
 0 --- 2
      / \
      \_/
+"""
+from collections import deque
 
-Definition for a undirected graph node
+
+# Definition for a undirected graph node
 class UndirectedGraphNode:
     def __init__(self, x):
         self.label = x
         self.neighbors = []
-"""
 
-from collections import deque
 
 class Solution:
     """
@@ -59,8 +60,7 @@ class Solution:
                 new_node.neighbors.append(new_neighbor)
         
         return mapping[root]
-        
-    
+
     def getNodes(self, node):
         q = deque([node])
         result = set([node])

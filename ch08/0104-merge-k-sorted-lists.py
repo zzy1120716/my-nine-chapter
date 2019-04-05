@@ -8,23 +8,20 @@
 返回 -1->2->4->null
 """
 
-"""
-方法一：Merge Sort（分治法）
-"""
-"""
-Definition of ListNode
-class ListNode(object):
 
+# Definition of ListNode
+class ListNode(object):
     def __init__(self, val, next=None):
         self.val = val
         self.next = next
-"""
+
+
+# 方法一：Merge Sort（分治法）
 class Solution:
     """
     @param lists: a list of ListNode
     @return: The head of one sorted list.
     """
-
     def mergeKLists(self, lists):
         # write your code here
         if lists == []:
@@ -54,26 +51,15 @@ class Solution:
         return dummy.next
 
 
-"""
-方法二：手写最小堆
-"""
-"""
-Definition of ListNode
-class ListNode(object):
-
-    def __init__(self, val, next=None):
-        self.val = val
-        self.next = next
-"""
-class Solution:
+# 方法二：手写最小堆
+class Solution1:
     """
     @param lists: a list of ListNode
     @return: The head of one sorted list.
     """
-
     def mergeKLists(self, lists):
         # write your code here
-        self.heap = [[i, lists[i].val] for i in range(len(lists)) if lists[i] != None]
+        self.heap = [[i, lists[i].val] for i in range(len(lists)) if lists[i] is not None]
         self.hsize = len(self.heap)
         for i in range(self.hsize - 1, -1, -1):
             self.adjustdown(i)
@@ -109,20 +95,11 @@ class Solution:
                 p = np
 
 
-"""
-方法三：利用python自带的heapq
-"""
-"""
-Definition of ListNode
-class ListNode(object):
-
-    def __init__(self, val, next=None):
-        self.val = val
-        self.next = next
-"""
+# 方法三：利用python自带的heapq
 from heapq import heappush, heappop
 
-class Solution:
+
+class Solution2:
     """
     @param lists: a list of ListNode
     @return: The head of one sorted list.

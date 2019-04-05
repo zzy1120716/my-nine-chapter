@@ -104,3 +104,38 @@ class Solution1:
             path.append(root)
 
         return path
+
+
+# BFS
+from collections import deque
+
+
+class Solution2(object):
+    def lowestCommonAncestor(self, root, p, q):
+        """
+        :type root: TreeNode
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: TreeNode
+        """
+        parent_map = {}
+        queue = deque([root])
+        while queue:
+            node = queue.popleft()
+            if node.left:
+                parent_map[node.left] = node
+                queue.append(node.left)
+            if node.right:
+                parent_map[node.right] = node
+                queue.append(node.right)
+        res = set()
+        node = p
+        while node != root:
+            res.add(node)
+            node = parent_map[node]
+        node = q
+        while node != root:
+            if node in res:
+                break
+            node = parent_map[node]
+        return node

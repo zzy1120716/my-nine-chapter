@@ -7,6 +7,8 @@
 
 给出 "aabb"，返回 ["aabb", "abab", "baba", "bbaa", "abba", "baab"]。
 """
+
+
 class Solution:
     """
     @param str: A string

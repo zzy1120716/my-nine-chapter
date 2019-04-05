@@ -17,6 +17,7 @@ O(logN) time
 """
 
 
+# 方法一：一次二分
 class Solution:
     """
     @param A: an integer rotated sorted array
@@ -54,6 +55,47 @@ class Solution:
         return -1
 
 
+# 方法二：先找到最小值，再二分搜索有序的区间
+class Solution1(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        if not nums:
+            return -1
+        min_idx = self.findMin(nums)
+        if nums[min_idx] <= target <= nums[-1]:
+            return self.binarySearch(nums, min_idx, len(nums) - 1, target)
+        return self.binarySearch(nums, 0, min_idx - 1, target)
+
+    def findMin(self, nums):
+        start, end = 0, len(nums) - 1
+        while start + 1 < end:
+            mid = (start + end) // 2
+            if nums[mid] < nums[end]:
+                end = mid
+            else:
+                start = mid
+        if nums[start] < nums[end]:
+            return start
+        return end
+
+    def binarySearch(self, nums, start, end, target):
+        while start + 1 < end:
+            mid = (start + end) // 2
+            if nums[mid] <= target:
+                start = mid
+            else:
+                end = mid
+        if nums[start] == target:
+            return start
+        if nums[end] == target:
+            return end
+        return -1
+
+
 if __name__ == '__main__':
-    print(Solution().search([4, 5, 1, 2, 3], 1))
-    print(Solution().search([4, 5, 1, 2, 3], 0))
+    print(Solution1().search([4, 5, 1, 2, 3], 1))
+    print(Solution1().search([4, 5, 1, 2, 3], 0))
