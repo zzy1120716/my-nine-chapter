@@ -25,6 +25,38 @@ class TreeNode:
 """
 
 
+class Solution0:
+    """
+    @param root: A Tree
+    @return: Postorder in ArrayList which contains node values.
+    """
+    def postorderTraversal(self, root):
+        # write your code here
+        results = []
+        stack = []
+
+        cur = root
+        last = None
+
+        while cur or stack:
+            while cur:
+                stack.append(cur)
+                cur = cur.left
+            cur = stack[-1]
+            if not cur.right or cur.right == last:
+                results.append(cur.val)
+                stack.pop()
+                # 记录上一个访问的节点
+                # 用于判断“访问根节点之前，右子树是否已访问过”
+                last = cur
+                # 表示不需要转向，继续弹栈
+                cur = None
+            else:
+                cur = cur.right
+
+        return results
+
+
 # 递归
 class Solution:
 
@@ -113,3 +145,12 @@ class Solution2:
                 curr = None
 
         return result
+
+
+if __name__ == '__main__':
+    from tools import Tree
+    tree = Tree()
+    tree.construct_tree([1, -1, 11, -2, -3, 21, 6, None, None, None, 5])
+    results = tree.post_order_traversal()
+    print(results)
+    print(Solution0().postorderTraversal(tree.root))
