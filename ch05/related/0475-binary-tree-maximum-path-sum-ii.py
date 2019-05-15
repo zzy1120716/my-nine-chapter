@@ -21,6 +21,7 @@ class TreeNode:
         self.left, self.right = None, None
 """
 import sys
+from collections import deque
 
 
 # 方法一：分治法
@@ -63,3 +64,24 @@ class Solution1:
             self.dfs(node.left, path_sum, vals)
         if node.right:
             self.dfs(node.right, path_sum, vals)
+
+
+# 方法三：BFS
+class Solution2:
+    """
+    @param root: the root of binary tree.
+    @return: An integer
+    """
+    def maxPathSum2(self, root):
+        # write your code here
+        q = deque([(root, root.val)])
+        ans = float('-inf')
+        while q:
+            cur = q.popleft()
+            if cur[1] > ans:
+                ans = cur[1]
+            if cur[0].left:
+                q.append((cur[0].left, cur[1] + cur[0].left.val))
+            if cur[0].right:
+                q.append((cur[0].right, cur[1] + cur[0].right.val))
+        return ans
